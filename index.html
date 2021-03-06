@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+        integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="src/styles.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="card" style="width: 100rem;">
+        <div class="card-body">
+            <div class="content">
+                <div class="row">
+                    <div class="col">
+                        <form id="input-form">
+                            <input type="text" id="input-city" class="city" placeholder="Los Angeles" autofocus="on" />
+                            <input type="submit" class="search-engine" value=" 📍Search city" />
+                        </form>
+                        <button id="location-button">Click for your location</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-first" style="width: 20rem;">
+                <div class="card-body-two">
+                    <p>Current city: <em>Los Angeles</em></p>
+                    <br />
+                    <h3>13°C</h3>
+                    <h4>15:00</h4>
+                    <h5 class="card-title" id="card-title">Thursday</h5>
+
+                    <h6 class="card-subtitle-first">Sunny 😎</h6>
+                    <p class="card-text"><i class="fas fa-sun"> </i></p>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="row">
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body-two">
+                                <h5 class="card-title">Friday</h5>
+                                <h6 class="card-subtitle">
+                                    <i class="fas fa-cloud-sun-rain"> 16°C </i>
+                                </h6>
+                                <p class="card-text">Light rain shower</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body-two">
+                                <h5 class="card-title">Saturday</h5>
+                                <h6 class="card-subtitle">
+                                    <i class="fas fa-sun"> 17°C </i>
+                                </h6>
+                                <p class="card-text">Sunny 😎</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body-two">
+                                <h5 class="card-title">Sunday</h5>
+                                <h6 class="card-subtitle"><i class="fas fa-sun">20°C </i></h6>
+                                <p class="card-text">Sunny and warm 😎</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body-two">
+                                <h5 class="card-title">Monday</h5>
+                                <h6 class="card-subtitle"><i class="fas fa-sun"> 19°C</i></h6>
+                                <p class="card-text">Sunny 😎</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body-two">
+                                <h5 class="card-title">Tuesday</h5>
+                                <h6 class="card-subtitle"><i class="fas fa-sun"> 17°C</i></h6>
+                                <p class="card-text">Sunny 😎</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <em>Coded by Gabriela</em>
+            </footer>
+        </div>
+    </div>
+
+    <script src="src/index.js"></script>
+</body>
+
+</html>

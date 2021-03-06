@@ -1,0 +1,98 @@
+.city {
+  margin: 0 auto;
+}
+.city,
+.search-engine {
+  font-family: "Amatic SC", cursive;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: #fff3af;
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 30px; /* Added */
+  text-align: center;
+}
+
+.card-first {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 2px; /* Added */
+  text-align: center;
+}
+.card-text i {
+  text-align: center;
+  font-size: 40px;
+}
+.card {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 120px;
+  margin-bottom: 50px;
+}
+.card-body {
+  border: 8px solid #000000;
+  border-radius: 5px;
+  padding: 20px 20px 20px 20px;
+  background-image: url(https://wallpaperaccess.com/full/718094.jpg);
+  background-size: cover;
+}
+.card-body-two {
+  background-color: #fff3af;
+  border-radius: 2%;
+  border: 5px dotted black;
+}
+.card-title {
+  font-size: 45px;
+  text-align: left;
+  text-decoration: underline;
+  font-family: "Amatic SC", cursive;
+}
+.card-subtitle {
+  font-size: 34px;
+  text-align: left;
+  padding-bottom: 40px;
+  padding-top: 5px;
+  font-family: "Indie Flower", cursive;
+}
+.card-subtitle-first {
+  font-size: 34px;
+  text-align: left;
+  padding-bottom: 40px;
+  padding-top: 5px;
+  font-family: "Indie Flower", cursive;
+}
+.card-text {
+  font-size: 30px;
+  font-family: "Indie Flower", cursive;
+}
+#celsius-link,
+#fahrenheit-link {
+  text-decoration: none;
+}
+h4 {
+  font-size: 34px;
+  font-weight: 900;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+p {
+  font-size: 29px;
+  font-family: "Amatic SC", cursive;
+  font-weight: bolder;
+}
+
+footer {
+  color: #000000;
+  line-height: 2;
+  text-align: center;
+  background-color: #ecd18c;
+  position: relative;
+  bottom: 0;
+  font-family: "Amatic SC", cursive;
+}
+#location-button {
+  font-family: "Amatic SC", cursive;
+  font-size: 20px;
+  margin-bottom: 10px;
+  background-color: #fff3af;
+  border-radius: 2%;
+}
