@@ -47,6 +47,9 @@ function showData(response) {
   let icon=document.querySelector("#primary-icon");
   icon.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   
+  //let description=document.querySelector("#primary-description");
+  // description.innerHTML=`${response.data.weather[0].description}`
+  
   let windSpeedElement=document.querySelector("#wind-speed");
   windSpeedElement.innerHTML=`Wind speed:${Math.round(response.data.wind.speed)}km/h`
 
