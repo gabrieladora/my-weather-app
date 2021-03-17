@@ -36,12 +36,20 @@ function search(city) {
 }
 
 function showData(response) {
-  console.log(response.data.main.temp);
+ console.log(response.data.main.temp);
+ console.log(response);
   let currentTemp = response.data.main.temp;
   let h3 = document.querySelector("h3");
   h3.innerHTML = `${Math.round(currentTemp)}°C`;
   let currentCity = document.querySelector("p");
   currentCity.innerHTML = `Current city: ${response.data.name}`;
+  
+  let icon=document.querySelector("#primary-icon");
+  icon.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  
+  let windSpeedElement=document.querySelector("#wind-speed");
+  windSpeedElement.innerHTML=`Wind speed:${Math.round(response.data.wind.speed)}km/h`
+
 }
 let form = document.querySelector("#input-form");
 form.addEventListener("submit", searchingCity);
