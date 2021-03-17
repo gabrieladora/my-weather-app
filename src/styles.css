@@ -7,16 +7,16 @@
   font-size: 30px;
   font-weight: bold;
   background-color: #fff3af;
-  margin: 0 auto; /* Added */
-  float: none; /* Added */
-  margin-bottom: 30px; /* Added */
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 30px;
   text-align: center;
 }
 
 .card-first {
-  margin: 0 auto; /* Added */
-  float: none; /* Added */
-  margin-bottom: 2px; /* Added */
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 2px;
   text-align: center;
 }
 .card-text i {
@@ -64,7 +64,7 @@
   padding-top: 5px;
 }
 .wind-speed,
-.precipitation {
+.humidity {
   font-size: 30px;
 }
 

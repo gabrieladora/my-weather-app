@@ -41,18 +41,26 @@ function showData(response) {
   let currentTemp = response.data.main.temp;
   let h3 = document.querySelector("h3");
   h3.innerHTML = `${Math.round(currentTemp)}°C`;
+  if (currentTemp <= 4) {
+    let note= document.querySelector("#note");
+    note.innerHTML="I miss hating the summer heat... #BringSummerBack"
+  }
+  if (currentTemp >=35) {
+    let note= document.querySelector("#note");
+    note.innerHTML="It’s finally hot enough outside to complain about how hot it is. "
+  }
+
   let currentCity = document.querySelector("p");
   currentCity.innerHTML = `Current city: ${response.data.name}`;
-  
   let icon=document.querySelector("#primary-icon");
   icon.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-  
-  //let description=document.querySelector("#primary-description");
-  // description.innerHTML=`${response.data.weather[0].description}`
-  
+  let description=document.querySelector("#primary-description");
+ description.innerHTML=`${response.data.weather[0].description}`
+ 
   let windSpeedElement=document.querySelector("#wind-speed");
   windSpeedElement.innerHTML=`Wind speed:${Math.round(response.data.wind.speed)}km/h`
-
+  let humidityElement= document.querySelector("#humidity");
+  humidityElement.innerHTML=`Humidity:${Math.round(response.data.main.humidity)}%`
 }
 let form = document.querySelector("#input-form");
 form.addEventListener("submit", searchingCity);
@@ -70,3 +78,4 @@ function searchForLocation(position) {
 
 let button = document.querySelector("#location-button");
 button.addEventListener("click", getUserLocation);
+
