@@ -14,11 +14,14 @@ let weekDays = [
   " Saturday"
 ];
 
-let h4 = document.querySelector("h4");
-h4.innerHTML = `${hours}:${minutes}`;
-let today = document.querySelector("#card-title");
-today.innerHTML = `${weekDays[day]}`;
 
+let h4 = document.querySelector("h4");
+ h4.innerHTML = `${hours}:${minutes}`;
+ if (hours < 10, minutes < 10) {
+   h4.innerHTML = `0${hours}:0${minutes}`;
+ }
+ let today = document.querySelector("#card-title");
+today.innerHTML = `${weekDays[day]}`;
 //display the city name on the page after the user submits the form.
 
 function searchingCity(event) {
