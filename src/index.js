@@ -1,7 +1,11 @@
 // 1.dispay current time and day
 let currentTime = new Date();
 let hours = currentTime.getUTCHours();
+   
 let minutes = currentTime.getMinutes();
+  
+
+
 let day = currentTime.getUTCDay();
 
 let weekDays = [
@@ -14,14 +18,20 @@ let weekDays = [
   " Saturday"
 ];
 
-
 let h4 = document.querySelector("h4");
- h4.innerHTML = `${hours}:${minutes}`;
- if (hours < 10, minutes < 10) {
-   h4.innerHTML = `0${hours}:0${minutes}`;
+   h4.innerHTML = `${hours}:${minutes}`;
+
+if (hours < 10) {
+     let h4 = document.querySelector("h4");
+   h4.innerHTML = `0${hours}:${minutes}`;
+ } 
+ if (minutes < 10) {
+    let h4 = document.querySelector("h4");
+   h4.innerHTML = `${hours}:0${minutes}`;
  }
  let today = document.querySelector("#card-title");
 today.innerHTML = `${weekDays[day]}`;
+
 //display the city name on the page after the user submits the form.
 
 function searchingCity(event) {
@@ -46,11 +56,11 @@ function showData(response) {
   h3.innerHTML = `${Math.round(currentTemp)}°C`;
   if (currentTemp <= 4) {
     let note= document.querySelector("#note");
-    note.innerHTML="I miss hating the summer heat... #BringSummerBack"
+    note.innerHTML="I miss hating the summer heat... #BringSummerBack 🙋‍♀️"
   }
   if (currentTemp >=35) {
     let note= document.querySelector("#note");
-    note.innerHTML="It’s finally hot enough outside to complain about how hot it is. "
+    note.innerHTML="It’s finally hot enough outside to complain about how hot it is.🔥🥵 "
   }
 
   let currentCity = document.querySelector("p");
