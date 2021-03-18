@@ -47,6 +47,7 @@
   text-decoration: underline;
   font-family: "Amatic SC", cursive;
 }
+
 .card-subtitle {
   font-size: 34px;
   text-align: left;
@@ -94,6 +95,11 @@ footer {
   margin-bottom: 10px;
   background-color: #fff3af;
   border-radius: 2%;
+  transition: all 200ms ease-in-out;
+}
+#location-button:hover {
+  background-color: beige;
+  cursor: pointer;
 }
 #primary-icon {
   margin: 0 auto;
