@@ -73,6 +73,7 @@ h4 {
   font-size: 34px;
   font-weight: 900;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-align: left;
 }
 p {
   font-size: 40px;
@@ -104,4 +105,19 @@ footer {
 #primary-icon {
   margin: 0 auto;
   display: block;
+}
+
+#celsius-link,
+#fahrenheit-link {
+  text-decoration: none;
+  color: #000000;
+}
+
+.active {
+  cursor: default;
+  color: #000000;
+}
+.active:hover {
+  text-decoration: none;
+  color: #000000;
 }
