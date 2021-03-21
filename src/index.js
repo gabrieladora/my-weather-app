@@ -14,18 +14,18 @@ let weekDays = [
   " Saturday"
 ];
 
-let h4 = document.querySelector("h4");
-   h4.innerHTML = `Last updated at➡ ${hours}:${minutes}`;
+let h4 = document.querySelector("#time");
+   h4.innerHTML = `Last updated at  ${hours}:${minutes}`;
 
 if (hours < 10) {
-     let h4 = document.querySelector("h4");
-   h4.innerHTML = `Last updated at➡ 0${hours}:${minutes}`;
+     let h4 = document.querySelector("#time");
+   h4.innerHTML = `Last updated at 0${hours}:${minutes}`;
  } 
  if (minutes < 10) {
-    let h4 = document.querySelector("h4");
-   h4.innerHTML = `Last updated at➡ ${hours}:0${minutes}`;
+    let h4 = document.querySelector("#time");
+   h4.innerHTML = `Last updated at ${hours}:0${minutes}`;
  }
- let today = document.querySelector("#card-title");
+ let today = document.querySelector("#card-title-first");
 today.innerHTML = `${weekDays[day]}`;
 
 //display the city name on the page after the user submits the form.
@@ -43,6 +43,7 @@ function search(city) {
   let apiUrl = ` https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showData);
 }
+search("Los Angeles");
 
 function showData(response) {
  console.log(response.data.main.temp);
@@ -52,13 +53,13 @@ function showData(response) {
  celsiusTemperature=response.data.main.temp;
   let tempNote = document.querySelector("#temperature");
   tempNote.innerHTML = `${Math.round(currentTemp)}`;
-  if (currentTemp <= 4) {
+  if (currentTemp <= 5) {
     let note= document.querySelector("#note");
     note.innerHTML="I miss hating the summer heat... #BringSummerBack 🙋‍♀️"
   }
   if (currentTemp >=35) {
     let note= document.querySelector("#note");
-    note.innerHTML="It’s finally hot enough outside to complain about how hot it is.🔥🥵 "
+    note.innerHTML=" It’s finally hot enough outside to complain about how hot it is.🔥🥵 "
   }
 
   let currentCity = document.querySelector("p");
@@ -72,6 +73,7 @@ function showData(response) {
   windSpeedElement.innerHTML=`Wind speed:${Math.round(response.data.wind.speed)}km/h`
   let humidityElement= document.querySelector("#humidity");
   humidityElement.innerHTML=`Humidity:${Math.round(response.data.main.humidity)}%`
+
 }
 let form = document.querySelector("#input-form");
 form.addEventListener("submit", searchingCity);
