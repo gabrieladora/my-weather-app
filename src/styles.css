@@ -18,6 +18,10 @@
   float: inline-start;
   margin-bottom: 2px;
 }
+.units {
+  position: relative;
+  top: -30px;
+}
 
 .card-first {
   margin: 0 auto;
@@ -60,6 +64,12 @@
   text-align: center;
   font-size: 30px;
 }
+#primary-description {
+  text-align: center;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-family: "Indie Flower", cursive;
+}
 .card-title {
   font-size: 33px;
   text-align: left;
@@ -78,11 +88,7 @@
   font-size: 30px;
   font-family: "Indie Flower", cursive;
 }
-#primary-description {
-  text-align: center;
-  padding-bottom: 5px;
-  padding-top: 5px;
-}
+
 .wind-speed,
 .humidity {
   font-size: 30px;
@@ -134,7 +140,7 @@ footer {
 
 .active {
   cursor: default;
-  color: #000000;
+  color: aqua;
 }
 .active:hover {
   text-decoration: none;

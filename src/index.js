@@ -28,6 +28,23 @@ if (hours < 10) {
  let today = document.querySelector("#card-title-first");
 today.innerHTML = `${weekDays[day]}`;
 
+
+
+//dt 
+
+function displayHours(timestamp) {
+  let currentTime = new Date(timestamp);
+let hours = currentTime.getUTCHours();  
+let minutes = currentTime.getMinutes();
+if (minutes < 10) {
+  minutes= `0${minutes}`
+}
+if (hours < 10) {
+  hours= `0${hours} `
+}
+return `${hours}:${minutes} `
+}
+
 //display the city name on the page after the user submits the form.
 
 function searchingCity(event) {
@@ -38,10 +55,38 @@ function searchingCity(event) {
   search(inputCityName.value);
 }
 
+//
+function showHourlyForecast(response) {
+  console.log(response.data);
+  let forecastElement=document.querySelector("#first-forecast");
+ let forecast= null;
+
+for (let index = 0; index < 6; index++) {
+  forecast= response.data.list[index];
+  forecastElement.innerHTML= `<div class="row">
+                            <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body-two">
+                            <h5 class="card-title">${displayHours(forecast.dt * 1000)} </h5>
+                            <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
+                            <h6 class="card-subtitle">
+                               ${Math.round(forecast.main.temp)}°C
+                            </h6>
+                            <p class="card-text">${forecast.weather[0].description}</p>;
+                           </div>
+                           </div>
+                           </div>
+                           </div>`
+                          }
+}
+
+
 function search(city) {
   let apiKey = "4b3a638fb4d48006da8ec9048f3f42e3";
   let apiUrl = ` https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showData);
+  apiUrl= `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric` ;
+  axios.get(apiUrl).then(showHourlyForecast)
 }
 search("Los Angeles");
 
