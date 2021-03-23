@@ -79,7 +79,7 @@
 
 .card-subtitle {
   font-size: 34px;
-  text-align: left;
+  text-align: center;
   padding-bottom: 40px;
   padding-top: 5px;
   font-family: "Indie Flower", cursive;
@@ -140,7 +140,7 @@ footer {
 
 .active {
   cursor: default;
-  color: aqua;
+  color: #000000;
 }
 .active:hover {
   text-decoration: none;

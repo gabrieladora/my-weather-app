@@ -27,9 +27,6 @@ if (hours < 10) {
  }
  let today = document.querySelector("#card-title-first");
 today.innerHTML = `${weekDays[day]}`;
-
-
-
 //dt 
 
 function displayHours(timestamp) {
@@ -58,28 +55,32 @@ function searchingCity(event) {
 //
 function showHourlyForecast(response) {
   console.log(response.data);
-  let forecastElement=document.querySelector("#first-forecast");
- let forecast= null;
-
-for (let index = 0; index < 6; index++) {
-  forecast= response.data.list[index];
-  forecastElement.innerHTML= `<div class="row">
-                            <div class="col">
-                        <div class="card" style="width: 18rem;">
+  let forecastElement = document.querySelector("#first-forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
+                            <div class="col-2">
+                        <div class="card">
                             <div class="card-body-two">
-                            <h5 class="card-title">${displayHours(forecast.dt * 1000)} </h5>
-                            <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
+                            <h5 class="card-title">${displayHours(
+                              forecast.dt * 1000
+                            )} </h5>
+                            <img src="http://openweathermap.org/img/wn/${
+                              forecast.weather[0].icon
+                            }@2x.png">
                             <h6 class="card-subtitle">
                                ${Math.round(forecast.main.temp)}°C
                             </h6>
-                            <p class="card-text">${forecast.weather[0].description}</p>;
+                            <p class="card-text">${
+                              forecast.weather[0].description
+                            }</p>
                            </div>
                            </div>
-                           </div>
-                           </div>`
-                          }
+                           </div>`;
+  }
 }
-
 
 function search(city) {
   let apiKey = "4b3a638fb4d48006da8ec9048f3f42e3";
@@ -88,7 +89,7 @@ function search(city) {
   apiUrl= `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric` ;
   axios.get(apiUrl).then(showHourlyForecast)
 }
-search("Los Angeles");
+
 
 function showData(response) {
  console.log(response.data.main.temp);
@@ -103,7 +104,7 @@ function showData(response) {
   if (currentTemp <= 5) {
     note.innerHTML="I miss hating the summer heat... #BringSummerBack 🙋‍♀️"
   }
-  if (currentTemp >=35) {
+  if (currentTemp >=31) {
     note.innerHTML=" It’s finally hot enough outside to complain about how hot it is.🔥🥵 "
   }
 
@@ -147,15 +148,12 @@ function displayFahrenheitTemperature(event){
    fahrenheitElement.classList.add("active");
 
 }
-
 let celsiusTemperature=null;
 
 let fahrenheitElement=document.querySelector("#fahrenheit-link");
 fahrenheitElement.addEventListener("click", displayFahrenheitTemperature)
 
-
 //celsius link
-
 function displayCelsiusTemperature (event) {
   event.preventDefault();
   let currentTemp= document.querySelector("#temperature");
@@ -163,9 +161,7 @@ function displayCelsiusTemperature (event) {
   celsiusElement.classList.add("active");
    fahrenheitElement.classList.remove("active");
 }
-
-
-
-
 let celsiusElement=document.querySelector("#celsius-link");
 celsiusElement.addEventListener("click", displayCelsiusTemperature)
+
+search("Los Angeles");
