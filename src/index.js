@@ -98,12 +98,12 @@ function showData(response) {
  celsiusTemperature=response.data.main.temp;
   let tempNote = document.querySelector("#temperature");
   tempNote.innerHTML = `${Math.round(currentTemp)}`;
+  let note= document.querySelector("#note");
+  note.innerHTML = null;
   if (currentTemp <= 5) {
-    let note= document.querySelector("#note");
     note.innerHTML="I miss hating the summer heat... #BringSummerBack 🙋‍♀️"
   }
   if (currentTemp >=35) {
-    let note= document.querySelector("#note");
     note.innerHTML=" It’s finally hot enough outside to complain about how hot it is.🔥🥵 "
   }
 
