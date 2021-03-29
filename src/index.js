@@ -1,6 +1,6 @@
 // 1.dispay current time and day
 let currentTime = new Date();
-let hours = currentTime.getUTCHours();  
+let hours = currentTime.getHours();  
 let minutes = currentTime.getMinutes();
 let day = currentTime.getUTCDay();
 
@@ -31,7 +31,7 @@ today.innerHTML = `${weekDays[day]}`;
 
 function displayHours(timestamp) {
   let currentTime = new Date(timestamp);
-let hours = currentTime.getUTCHours();  
+let hours = currentTime.getHours();  
 let minutes = currentTime.getMinutes();
 if (minutes < 10) {
   minutes= `0${minutes}`
@@ -107,6 +107,8 @@ function showData(response) {
   if (currentTemp >=31) {
     note.innerHTML=" It’s finally hot enough outside to complain about how hot it is.🔥🥵 "
   }
+
+   
 
   let currentCity = document.querySelector("p");
   currentCity.innerHTML = `Current city: ${response.data.name}`;
