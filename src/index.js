@@ -135,7 +135,10 @@ function searchForLocation(position) {
   let apiKey = "4b3a638fb4d48006da8ec9048f3f42e3";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showData);
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showHourlyForecast);
 }
+
 
 let button = document.querySelector("#location-button");
 button.addEventListener("click", getUserLocation);
